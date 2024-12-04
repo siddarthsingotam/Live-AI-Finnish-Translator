@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Finnish Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        async function translateText() {
+            const text = document.getElementById("text-input").value;
+            const response = await fetch("/translate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `text=${encodeURIComponent(text)}`,
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                document.getElementById("output").innerText = result.translated_text;
+            } else {
+                document.getElementById("output").innerText = result.error || "Translation failed";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>English to Finnish Translator</h1>
+    <form onsubmit="event.preventDefault(); translateText();">
+        <label for="text-input">Enter English Text:</label><br>
+        <input type="text" id="text-input" name="text" required><br><br>
+        <button type="submit">Translate</button>
+    </form>
+    <h2>Translated Text:</h2>
+    <p id="output"></p>
+</body>
+</html>
