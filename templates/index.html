@@ -19,20 +19,30 @@
             const result = await response.json();
             if (response.ok) {
                 document.getElementById("output").innerText = result.translated_text;
+                document.getElementById("overlay").style.display = "block";
             } else {
                 document.getElementById("output").innerText = result.error || "Translation failed";
+                document.getElementById("overlay").style.display = "block";
             }
         }
+
+        function closeOverlay(){
+                document.getElementById("overlay").style.display = "none";
+            }
+
     </script>
 </head>
 <body>
     <h1>English to Finnish Translator</h1>
     <form onsubmit="event.preventDefault(); translateText();">
-        <label for="text-input">Enter English Text:</label><br>
+        <label for="text-input">Enter English Text: &#x1f1ec;&#x1f1e7;</label><br>
         <input type="text" id="text-input" name="text" required><br><br>
         <button type="submit">Translate</button>
     </form>
-    <h2>Translated Text:</h2>
-    <p id="output"></p>
+    <div id="overlay" class="overlay" style="display: none;">
+        <h2>Translated Text: 🇫🇮</h2>
+        <p id="output"></p>
+        <button onclick="closeOverlay()">Close</button>
+    </div>
 </body>
 </html>
