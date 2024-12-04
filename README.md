@@ -19,7 +19,7 @@ This is a simple Flask application that translates text from English to Finnish 
 1. Clone this repository:
    ```bash
    git clone <repository_url>
-   cd flask_translation_app
+   cd Live-AI-Finnish-Translator
    ```
 
 2. Create a virtual environment (optional but recommended):
