@@ -9,6 +9,11 @@ This is a simple Flask application that translates text from English to Finnish 
 - Translate the input text to Finnish using a pre-trained machine translation model.
 - Display the translated text in real time.
 
+## Demo
+- This demo was tested on an Iphone 14 pro max
+
+![plot](./images/img1.png)
+
 ## Installation
 
 ### Prerequisites
