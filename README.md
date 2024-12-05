@@ -10,7 +10,7 @@ This is a simple Flask application that translates text from English to Finnish 
 - Display the translated text in real time.
 
 ## Demo
-- This demo was tested on an Iphone 14 pro max.
+- This demo was tested on an Iphone 14 pro max:
 
 ![plot](./images/img1.png)
 
